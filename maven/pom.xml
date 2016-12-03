@@ -38,7 +38,6 @@
         <module>java8</module>
         <module>byte-buddy-mockito</module>
         <module>byte-buddy-easymock</module>
-        <module>jacoco-offline</module>
     </modules>
 
     <properties>
