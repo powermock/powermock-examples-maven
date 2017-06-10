@@ -25,9 +25,6 @@
 
     <artifactId>powermock-examples-spring-mockito-xml</artifactId>
     <name>${project.artifactId}</name>
-    <properties>
-        <spring.version>3.0.5.RELEASE</spring.version>
-    </properties>
 
     <description>
         Example showing how to use the PowerMock in a Spring Integration Test and XML parsing
@@ -37,13 +34,11 @@
         <dependency>
             <groupId>org.powermock</groupId>
             <artifactId>powermock-api-mockito</artifactId>
-
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.mockito</groupId>
             <artifactId>mockito-core</artifactId>
-
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -65,13 +60,11 @@
         <dependency>
             <groupId>org.powermock</groupId>
             <artifactId>powermock-module-junit4-rule</artifactId>
-
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.powermock</groupId>
             <artifactId>powermock-classloading-xstream</artifactId>
-
             <scope>test</scope>
         </dependency>
         <dependency>

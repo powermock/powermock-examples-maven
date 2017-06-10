@@ -11,6 +11,10 @@
     </parent>
 
     <artifactId>jacoco-offline</artifactId>
+    <name>JaCoCo Offline with PowerMock</name>
+    <description>
+        Example how to get code coverage with PowerMock
+    </description>
 
     <properties>
         <jacoco.version>0.7.7.201606060606</jacoco.version>

@@ -39,7 +39,6 @@ import static org.powermock.api.support.membermodification.MemberModifier.suppre
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:/example-context.xml")
 @PrepareForTest(IdGenerator.class)
-@PowerMockIgnore({"org.w3c.*", "javax.xml.*"})
 public class SpringExampleTest {
 
     @Rule

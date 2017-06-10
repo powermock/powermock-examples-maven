@@ -39,12 +39,21 @@
         <module>byte-buddy-mockito</module>
         <module>byte-buddy-easymock</module>
         <module>jacoco-offline</module>
+        <module>mockito2</module>
+        <module>global-ignore</module>
     </modules>
 
     <properties>
-        <powermock.version>1.7.0RC2</powermock.version>
+        <powermock.version>1.7.0</powermock.version>
         <maven.compiler.source>1.6</maven.compiler.source>
         <maven.compiler.target>1.6</maven.compiler.target>
+        <mockito1.version>1.10.19</mockito1.version>
+        <mockito2.version>2.8.9</mockito2.version>
+        <easymock.version>3.4</easymock.version>
+        <assertj-core.version>3.5.2</assertj-core.version>
+        <junit.version>4.12</junit.version>
+        <spring.version>3.0.5.RELEASE</spring.version>
+        <commons-lang3.version>3.4</commons-lang3.version>
     </properties>
 
     <repositories>
@@ -69,6 +78,11 @@
             <dependency>
                 <groupId>org.powermock</groupId>
                 <artifactId>powermock-api-mockito</artifactId>
+                <version>${powermock.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.powermock</groupId>
+                <artifactId>powermock-api-mockito2</artifactId>
                 <version>${powermock.version}</version>
             </dependency>
             <dependency>
@@ -116,24 +130,45 @@
             <dependency>
                 <groupId>org.easymock</groupId>
                 <artifactId>easymock</artifactId>
-                <version>3.4</version>
+                <version>${easymock.version}</version>
                 <scope>test</scope>
             </dependency>
             <dependency>
                 <groupId>org.mockito</groupId>
                 <artifactId>mockito-core</artifactId>
-                <version>1.10.19</version>
+                <version>${mockito1.version}</version>
             </dependency>
             <dependency>
                 <groupId>junit</groupId>
                 <artifactId>junit</artifactId>
-                <version>4.12</version>
+                <version>${junit.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.assertj</groupId>
                 <artifactId>assertj-core</artifactId>
-                <version>3.5.2</version>
+                <version>${assertj-core.version}</version>
                 <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-core</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-context</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-test</artifactId>
+                <version>${spring.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${commons-lang3.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

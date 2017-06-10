@@ -21,7 +21,6 @@ import org.jdom.input.SAXBuilder;
 import org.junit.Assert;
 import org.junit.runner.RunWith;
 import org.powermock.api.easymock.PowerMock;
-import org.powermock.core.classloader.annotations.PowerMockIgnore;
 import org.powermock.core.classloader.annotations.PrepareForTest;
 import org.powermock.modules.junit4.PowerMockRunner;
 
@@ -32,7 +31,6 @@ import java.io.StringReader;
  */
 @RunWith(PowerMockRunner.class)
 @PrepareForTest( { StaticClass.class })
-@PowerMockIgnore( { "org.jdom.*", "com.sun.org.apache.xerces.*" })
 public class StaticWithJdomTest {
 
     @org.junit.Test
