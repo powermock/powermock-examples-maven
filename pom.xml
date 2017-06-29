@@ -41,6 +41,7 @@
         <module>jacoco-offline</module>
         <module>mockito2</module>
         <module>global-ignore</module>
+        <module>system-classes</module>
     </modules>
 
     <properties>
