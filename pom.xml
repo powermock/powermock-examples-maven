@@ -45,7 +45,7 @@
     </modules>
 
     <properties>
-        <powermock.version>1.7.0</powermock.version>
+        <powermock.version>1.7.1</powermock.version>
         <maven.compiler.source>1.6</maven.compiler.source>
         <maven.compiler.target>1.6</maven.compiler.target>
         <mockito1.version>1.10.19</mockito1.version>

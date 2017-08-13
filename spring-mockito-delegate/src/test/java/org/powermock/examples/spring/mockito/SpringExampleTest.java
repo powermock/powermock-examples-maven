@@ -74,7 +74,8 @@ public class SpringExampleTest {
         // Then
         assertEquals(expectedId, message.getId());
         assertEquals("My bean message", message.getContent());
-        verifyStatic(); IdGenerator.generateNewId();
+        verifyStatic(IdGenerator.class);
+        IdGenerator.generateNewId();
     }
 
     @Test
