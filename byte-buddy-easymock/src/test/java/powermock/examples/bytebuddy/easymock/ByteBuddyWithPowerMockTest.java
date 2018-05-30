@@ -14,12 +14,11 @@
  * limitations under the License.
  */
 
-package powermock.examples.bytebuddy;
+package powermock.examples.bytebuddy.easymock;
 
 import net.bytebuddy.ByteBuddy;
 import net.bytebuddy.dynamic.loading.ClassLoadingStrategy;
 import org.junit.After;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.powermock.api.easymock.PowerMock;
@@ -27,35 +26,26 @@ import org.powermock.core.classloader.MockClassLoader;
 import org.powermock.core.classloader.annotations.PrepareForTest;
 import org.powermock.modules.junit4.PowerMockRunner;
 import org.powermock.reflect.Whitebox;
-import powermock.examples.bytebuddy.easymock.SampleClass;
 
 import java.util.Map;
 
-import static org.easymock.EasyMock.createMock;
 import static org.hamcrest.CoreMatchers.containsString;
 import static org.junit.Assert.assertThat;
 
 @RunWith(PowerMockRunner.class)
 @PrepareForTest(SampleClass.class)
 public class ByteBuddyWithPowerMockTest {
-
-    @Test
-    @Ignore("Unfortunately this doesn't work")
-    public void assertThatPowerMockAndByteBuddyWorksTogetherWhenCallingMockFromEasyMock() throws Exception {
-        SampleClass sample = createMock(SampleClass.class);
-        assertThat(proxy(sample).getClass().getName(), containsString("$ByteBuddy$"));
+    
+    @After
+    public void clearPowerMockClassCacheAfterEachTest() {
+        MockClassLoader mcl = (MockClassLoader) SampleClass.class.getClassLoader();
+        ((Map) Whitebox.getInternalState(mcl, "classes")).clear();
     }
-
+    
     @Test
     public void assertThatPowerMockAndByteBuddyWorksTogetherWhenCallingMockFromPowerMock() throws Exception {
         SampleClass sample = PowerMock.createMock(SampleClass.class);
         assertThat(proxy(sample).getClass().getName(), containsString("$ByteBuddy$"));
-    }
-
-    @After public void
-    clearPowerMockClassCacheAfterEachTest() {
-        MockClassLoader mcl = (MockClassLoader) SampleClass.class.getClassLoader();
-        Whitebox.getInternalState(mcl, Map.class).clear();
     }
 
     private static SampleClass proxy(SampleClass sample)

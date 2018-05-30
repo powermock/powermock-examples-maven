@@ -23,11 +23,11 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.powermock.api.mockito.PowerMockito;
+import org.powermock.core.classloader.ByteCodeFramework;
 import org.powermock.core.classloader.MockClassLoader;
 import org.powermock.core.classloader.annotations.PrepareForTest;
 import org.powermock.modules.junit4.PowerMockRunner;
 import org.powermock.reflect.Whitebox;
-import powermock.examples.bytebuddy.mockito.SampleClass;
 
 import java.util.Map;
 
@@ -36,7 +36,7 @@ import static org.junit.Assert.assertThat;
 import static org.mockito.Mockito.mock;
 
 @RunWith(PowerMockRunner.class)
-@PrepareForTest(SampleClass.class)
+@PrepareForTest(value = SampleClass.class, byteCodeFramework = ByteCodeFramework.ByteBuddy)
 public class ByteBuddyWithPowerMockitoTest {
 
     @Mock

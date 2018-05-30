@@ -8,6 +8,7 @@ import org.powermock.modules.junit4.PowerMockRunner;
 import org.powermock.reflect.Whitebox;
 import org.slf4j.Logger;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertTrue;
 
 /**
@@ -18,12 +19,14 @@ import static org.junit.Assert.assertTrue;
 public class Slf4jUserTest {
 
     @Test
-    public void assertSlf4jMockPolicyWorks() throws Exception {
+    public void assertSlf4jMockPolicyWorks() {
         final Slf4jUser tested = new Slf4jUser();
 
         tested.getMessage();
 
         final Class<? extends Logger> aClass = Whitebox.getInternalState(Slf4jUser.class, Logger.class).getClass();
-        assertTrue(aClass.getName().contains("EnhancerByMockitoWithCGLIB"));
+        
+        assertThat(aClass.getName())
+            .contains("MockitoMock");
     }
 }

@@ -8,7 +8,7 @@
     </parent>
 
     <artifactId>powermock-examples-slf4j-no-impl</artifactId>
-    <name>slf4j-mockito</name>
+    <name>slf4j-noimpl</name>
 
     <description>
         Example of using Slf4jMockPolicy with no slf4j implementation (only API).
@@ -25,13 +25,11 @@
         <dependency>
             <groupId>org.powermock</groupId>
             <artifactId>powermock-api-easymock</artifactId>
-
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.powermock</groupId>
             <artifactId>powermock-module-junit4</artifactId>
-
             <scope>test</scope>
         </dependency>
         <dependency>
