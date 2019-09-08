@@ -1,6 +1,8 @@
 package demo.org.powermock.examples.globalignore;
 
 
+import demo.org.powermock.examples.globalignore1.ClassLoadedDefaultClassLoader1;
+import demo.org.powermock.examples.globalignore2.ClassLoadedDefaultClassLoader2;
 import org.assertj.core.api.ThrowableAssert.ThrowingCallable;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -17,17 +19,29 @@ public class SkipGlobalIgnoreExampleTest {
     @Test
     public void should_not_throw_exception() {
         
-        Throwable throwable = catchThrowable(new ThrowingCallable() {
+        Throwable throwable1 = catchThrowable(new ThrowingCallable() {
             @Override
             public void call() throws Throwable {
-                new ClassLoadedDefaultClassLoader();
+                new ClassLoadedDefaultClassLoader1();
             }
         });
-        
-        assertThat(throwable)
+
+        Throwable throwable2 = catchThrowable(new ThrowingCallable() {
+            @Override
+            public void call() throws Throwable {
+                new ClassLoadedDefaultClassLoader2();
+            }
+        });
+
+        assertThat(throwable1)
             .as("Exception is not thrown")
             .isNotNull()
             .hasMessageContaining("system class loader");
+
+        assertThat(throwable2)
+                .as("Exception is not thrown")
+                .isNotNull()
+                .hasMessageContaining("system class loader");
     }
     
 }
