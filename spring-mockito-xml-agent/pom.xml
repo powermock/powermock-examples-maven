@@ -27,7 +27,7 @@
     <artifactId>powermock-examples-spring-mockito-xml-agent</artifactId>
     <name>${project.artifactId}</name>
     <properties>
-        <spring.version>3.0.5.RELEASE</spring.version>
+        <spring.version>5.3.18</spring.version>
     </properties>
 
     <description>
