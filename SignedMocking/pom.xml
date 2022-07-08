@@ -24,7 +24,7 @@
         <dependency>
             <groupId>org.acegisecurity</groupId>
             <artifactId>acegi-security</artifactId>
-            <version>1.0.0</version>
+            <version>1.0.7</version>
             <exclusions>
                 <exclusion>
                     <groupId>org.springframework</groupId>
